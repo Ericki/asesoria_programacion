@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/login.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<script type="text/javascript" src="validar.js"  ></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method="POST" id="acceso" action="" accept-charset="utf-8">
+            <input type="text" name="Usuario" id="Usuario" class="form-control" placeholder=" Usuario" required autofocus>
+                <input type="password" id="Contra" name="Contra" class="form-control" placeholder=" Contraseña" required>
+                <div id="remember" class="checkbox">
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" id="campo3" name="login"  value="login">Entar</button>
+            </form><!-- /form -->
+            <div id="mensaje" style="padding:10px;  color:#FC0303"></div>
+            <a href="recuperarcontrasena.php" class="forgot-password">
+                ¿Olvidaste tu contraseña?
+            </a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+</body>
+
+</html>

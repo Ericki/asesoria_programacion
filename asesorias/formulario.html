@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> GUARDAR FORMULARIO</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#enviar").click(function(){
+				var formulario = $("#frminformacion").serializeArray();
+				$.ajax({
+					type: "POST",
+					dataType: 'json',
+  					url: "guardar.php",
+  					data: formulario,
+				}).done(function(respuesta){
+					$("#mensaje").html(respuesta.mensaje);
+					limpiarformulario("#frminformacion");
+				});
+			});
+
+
+			function limpiarformulario(formulario){
+
+				$(formulario).find('input').each(function() {
+        			switch(this.type) {
+            			case 'password':
+	            		case 'text':
+    	            	$(this).val('');
+        	        		break;
+            			case 'checkbox':
+            			case 'radio':
+                			this.checked = false;
+        				}
+    			});
+
+    			$(formulario).find('select').each(function() {
+        			$("#"+this.id + " option[value=0]").attr("selected",true);
+
+    			});
+			}
+		});
+		</script>
+
+	</head>
+	<body>
+		<form id="frminformacion">
+    		<label> Nombre: </label>
+    		<input type="text" name="nombre" /> <br/>
+    		<label> Apellidos: </label>
+    		<input type="text" name="apellidos"  /> <br/>
+    		<label> Sexo: </label>
+    		<input type="radio" name="sexo" value="f" /> Femenino
+    		<input type="radio" name="sexo" value="m" /> Masculino <br/>
+    		<label> Grado: </label>
+    		<select id = "grado" name="grado">
+    			<option value = "0" > Elige un grado </option>
+        		<option value = "1" > Primero </option>
+        		<option value = "2" > Segundo </option>
+        		<option value = "2" > Tercero </option>
+    		</select> <br/>
+    		<input type="button" id="enviar" value="Enviar" name="enviar" />
+		</form>
+
+		<div id="mensaje"></div>
+	</body>
+
+</html>

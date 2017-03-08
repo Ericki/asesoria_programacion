@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registro</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/registro.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+   <script type="text/javascript" src="registrarUsuarios.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="container" >
+    <div class="row" >
+        <div class="center-block">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="well well-sm  ">
+             <div id="mensaje" style="padding:10px;  color:#FC0303"></div>
+                <form  class="form-horizontal" id="datos" method="post" accept-charset="utf-8" >
+                    <fieldset>
+                        <legend class="text-center header">Registro de usuario</legend>
+
+                        <div class="form-group ">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                            
+                              <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-user ar"></i></span>
+            
+                                <input id="nombre" name="nombre" type="text" placeholder="Nombre de usuario" class="form-control">
+                            </div>
+                        </div>
+                      
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                            
+                              <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-user ar"></i></span>
+                               <input id="Apellidopaterno" name="Apellidopaterno" type="text" placeholder="Apellido Paterno" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                            
+                              <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-user ar"></i></span>
+                                <input id="Apellidomaterno" name="Apellidomaterno" type="text" placeholder="Apellido Materno" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-user ar"></i></span>
+                                  <input id="lname" id="Usuario" name="Usuario" placeholder="Usuario" class="form-control">
+                            </div>
+                        </div>
+            
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-envelope ar"></i></span>
+                                    <input id="E-mail" name="E-mail" type="text" placeholder="E-mail" class="form-control">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-lock ar"></i></span>
+                                <input iid="Contra" name="Contra" type="password" placeholder="Contraseña" class="form-control"> 
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-lock ar"></i></span>
+                                <input id="Contra1" name="Contra1" type="password" placeholder="Repetir contraseña" class="form-control">
+                            </div>
+                        </div>
+
+                     <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-tower ar"></i></span>
+                                <select  id="Tipousuario" name="Tipousuario" type="text" placeholder="Tipo de usuario"  class="form-control">
+                                    <option value="" disabled selected style="display: none;">Tipo de usuario</option>
+                                    <option value="Asesor">Asesor</option>
+                                    <option value="Asesorado">Asesorado</option>
+                                    <option value="Alumno Asesor">Alumno Asesor</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-6 input-group"> 
+                                <span class="input-group-addon" id="sizing-addon3"><i   class="glyphicon glyphicon-picture ar"></i></span>
+                                <input id="imagen" name="imagen" type="file"  class="form-control">
+                            </div>
+                        </div>
+                       
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button id="campo3" name="registrarse" type="submit" value="Registrarse" class="btn btn-primary btn-lg">Registrarse</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

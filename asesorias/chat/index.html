@@ -1,0 +1,285 @@
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<style media="screen">
+	#chat{
+			background-color: #eee;
+			margin: 20px auto 0;
+			width: 400px;
+		}
+		#wrapper #header-chat{
+			background-color: #555;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+		}
+		#caja-mensaje{
+	background-color: #A8DCF7;
+	margin: 0 auto;
+	padding: 10px;
+	width: 400px;
+}
+#caja-mensaje input{
+	border: solid 1px #4193BF;
+	outline: none;
+	padding: 10px;
+	width: 310px;
+}
+#caja-mensaje button{
+	border: 0;
+	background-color: #4193BF;
+	color: white;
+	font-size: 16px;
+	padding: 8px;
+	width: 50px;
+}
+#chat #mensajes{
+	padding: 10px;
+	height: 400px;
+	width: 400px;
+	overflow: hidden;
+	overflow-y: scroll
+}
+
+#chat #mensajes .mensaje-autor{
+	margin-bottom: 50px;
+
+}
+#chat #mensajes .mensaje-autor img, #chat #mensajes .mensaje-amigo img{
+	display: inline-block;
+	vertical-align: top;
+}
+#chat #mensajes .mensaje-autor .contenido{
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+	display: inline-block;
+	font-size: 13px;
+	padding: 15px;
+	vertical-align: top;
+	width: 280px;
+}
+#chat #mensajes .mensaje-autor .fecha{
+	color: #777;
+	font-style: italic;
+	font-size: 13px;
+	text-align: right;
+	margin-right: 35px;
+	margin-top: 10px;
+}
+#chat #mensajes .mensaje-autor .flecha-izquierda{
+	display: inline-block;
+	margin-right: -6px;
+	margin-top: 10px;
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid white;
+}
+#chat #mensajes .mensaje-amigo{
+	margin-bottom: 50px;
+}
+#chat #mensajes .mensaje-amigo .contenido{
+	background-color: #3990BF;
+	border-radius: 5px;
+	color: white;
+	display: inline-block;
+	font-size: 13px;
+	padding: 15px;
+	vertical-align: top;
+	width: 280px;
+}
+#chat #mensajes .mensaje-amigo .flecha-derecha{
+	display: inline-block;
+	margin-left: -6px;
+	margin-top: 10px;
+	width: 0;
+	height: 0;
+	border-top: 0px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #3990BF;
+}
+#chat #mensajes .mensaje-amigo img, #chat #mensajes .mensaje-autor img{
+	border-radius: 5px;
+}
+#chat #mensajes .mensaje-amigo .fecha{
+	color: #777;
+	font-style: italic;
+	font-size: 13px;
+	text-align: left;
+
+	margin-top: 10px;
+}
+
+</style>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header-chat">
+	 		Jennifer Love Hewitt (Activo ahora...)
+	 	</div>
+		<div id="user-container">
+			<label for="user">What's your name?</label>
+			<input type="text" id="user" name="user">
+			<button type="button" id="join-chat">Join Chat</button>
+		</div>
+
+		<div id="main-container" class="">
+			<button type="button" id="leave-room">Leave</button>
+			<div id="messages">
+
+			</div>
+
+			<div id="msg-container">
+				<input type="text" id="msg" name="msg">
+				<button type="button" id="send-msg">Send</button>
+			</div>
+		</div>
+
+	</div>
+
+
+
+ <div id="chat">
+ 	<div id="header-chat">
+ 		Jennifer Love Hewitt (Activo ahora...)
+ 	</div>
+ 	<div id="mensajes">
+ 		<div class="mensaje-autor">
+ 			<img src="foto.jpeg" alt="" class="foto">
+ 			<div class="flecha-izquierda"></div>
+ 			<div class="contenido">
+ 				Hola mi Jenny!!! Cómo estás??
+ 			</div>
+ 			<div class="fecha">Enviado hace tres minutos</div>
+ 		</div>
+
+ 		<div class="mensaje-amigo">
+ 			<div class="contenido">
+ 				Jajaja que onda señor Rivas, como está?? <br />
+ 				Yo estoy muy bien, cansada como siempre por la serie jeje :/
+ 			</div>
+ 			<div class="flecha-derecha"></div>
+ 			<img src="foto2.jpeg" alt="" class="foto">
+ 			<div class="fecha">Enviado hace tres minutos</div>
+ 		</div>
+		<div class="mensaje-amigo">
+ 			<div class="contenido">
+ 				Jajaja que onda señor Rivas, como está?? <br />
+ 				Yo estoy muy bien, cansada como siempre por la serie jeje :/
+ 			</div>
+ 			<div class="flecha-derecha"></div>
+ 			<img src="foto2.jpeg" alt="" class="foto">
+ 			<div class="fecha">Enviado hace tres minutos</div>
+ 		</div>
+		<div class="mensaje-amigo">
+ 			<div class="contenido">
+ 				Jajaja que onda señor Rivas, como está?? <br />
+ 				Yo estoy muy bien, cansada como siempre por la serie jeje :/
+ 			</div>
+ 			<div class="flecha-derecha"></div>
+ 			<img src="foto2.jpeg" alt="" class="foto">
+ 			<div class="fecha">Enviado hace tres minutos</div>
+ 		</div>
+ 	</div>
+
+ </div>
+ <div id="caja-mensaje">
+ 	<input type="text" placeholder="Escribir mensaje...">
+ 	<button>&#8594; </button>
+ </div>
+
+	<script id="messages-template" type="text/x-handlebars-template">
+		{{#each messages}}
+		<div class="msg">
+			<div class="time">{{time}}</div>
+			<div class="details">
+				<span class="user">{{user}}</span>: <span class="text">{{text}}</span>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+<script type="text/javascript">
+	(function(){
+
+	var user;
+	var messages = [];
+
+	var messages_template = Handlebars.compile($('#messages-template').html());
+
+	function updateMessages(msg){
+		messages.push(msg);
+		var messages_html = messages_template({'messages': messages});
+		$('#messages').html(messages_html);
+		$("#messages").animate({ scrollTop: $('#messages')[0].scrollHeight}, 1000);
+	}
+
+	var conn = new WebSocket('ws://localhost:8080');
+	conn.onopen = function(e) {
+	    console.log("Connection established!");
+	};
+
+	conn.onmessage = function(e) {
+		var msg = JSON.parse(e.data);
+		updateMessages(msg);
+	};
+
+
+	$('#join-chat').click(function(){
+		user = $('#user').val();
+		$('#user-container').addClass('hidden');
+		$('#main-container').removeClass('hidden');
+
+		var msg = {
+			'user': user,
+			'text': user + ' entered the room',
+			'time': moment().format('hh:mm a')
+		};
+
+		updateMessages(msg);
+		conn.send(JSON.stringify(msg));
+
+		$('#user').val('');
+	});
+
+
+	$('#send-msg').click(function(){
+		var text = $('#msg').val();
+		var msg = {
+			'user': user,
+			'text': text,
+			'time': moment().format('hh:mm a')
+		};
+		updateMessages(msg);
+		conn.send(JSON.stringify(msg));
+
+		$('#msg').val('');
+	});
+
+
+	$('#leave-room').click(function(){
+
+		var msg = {
+			'user': user,
+			'text': user + ' has left the room',
+			'time': moment().format('hh:mm a')
+		};
+		updateMessages(msg);
+		conn.send(JSON.stringify(msg));
+
+		$('#messages').html('');
+		messages = [];
+
+		$('#main-container').addClass('hidden');
+		$('#user-container').removeClass('hidden');
+
+
+	});
+
+})();
+</script>
